@@ -18,7 +18,7 @@ RUN R -e "install.packages('lattice', dependencies=TRUE, repos='http://cran.rstu
   && R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.rstudio.com/'); BiocManager::install()" \
 	&& R -e "BiocManager::install(\"DESeq2\")" \
 	&& pip install pysam \
-	&& pip install TEtranscripts \
+	&& pip install 'TEtranscripts @ git+https://github.com/olivertam/TEtranscripts@4b95224c222c79872f81af284bdcc2d52ffa25c8'\
 	&& rm -rf *.tgz *.tar *.zip \
 	&& rm -rf /var/cache/apk/* \
 	&& rm -rf /tmp/*
