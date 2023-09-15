@@ -207,7 +207,7 @@ def readInAlignment(filename, fileformat, sortByPos):
                 pysam.sort("-n","-T",bam_tmpfile,"-o",bam_tmpfile+".bam",filename)
                 # For pysam v0.9.0+ and using htlibs/samtools 1.3+
                 samfile = pysam.AlignmentFile(bam_tmpfile + ".bam", 'r')
-                
+
                 if len(samfile.header) == 0:
                     sys.stderr.write("BAM/SAM file has no header section. Exit! \n")
                     sys.exit(1)
@@ -215,7 +215,7 @@ def readInAlignment(filename, fileformat, sortByPos):
         else:
             samfile = pysam.AlignmentFile(filename, 'r')
             pysam.set_verbosity(save)
-            
+
             if len(samfile.header) == 0:
                 sys.stderr.write("BAM/SAM file has no header section. Exit!\n")
                 sys.exit(1)
